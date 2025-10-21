@@ -1,0 +1,145 @@
+# 🧭 Manual de Buenas Prácticas para el Manejo de Issues
+
+**Versión:** 1.4  
+**Última actualización:** _(fecha actual)_  
+**Aplicable a:** Repositorios vinculados a tickets del **CRM Smart Strategy Quickbase**
+
+---
+
+## 1. Propósito y Alcance
+
+Este manual define **políticas obligatorias y lineamientos claros** para la creación, gestión y cierre de Issues en GitHub.  
+Su finalidad es **garantizar trazabilidad**, comunicación técnica efectiva y consistencia entre el **CRM Smart Strategy Quickbase** y los repositorios de desarrollo.
+
+Se aplica a todos los integrantes del equipo de desarrollo de Smart Strategy y a cualquier colaborador autorizado que gestione Issues en repositorios corporativos.
+
+---
+
+## 2. Principios Generales
+
+- Toda modificación de código debe estar **respaldada por una Issue activa**.  
+- Las discusiones técnicas deben documentarse dentro del hilo del Issue.  
+- La información debe ser clara, verificable y rastreable hasta el ticket original en el CRM.  
+- Las políticas aquí descritas son **obligatorias** y sujetas a revisión semestral.
+
+---
+
+## 3. Estructura y Gestión de una Issue
+
+### 3.1 Título
+[CRM#<número>] <breve descripción>
+Ejemplo: `[CRM#1023] Error al generar XML de Nota de Crédito Parcial`
+
+### 3.2 Descripción
+Usar formato **Markdown** e incluir:
+- Número del ticket del CRM Smart Strategy Quickbase  
+- Resumen del problema  
+- Pasos para reproducir  
+- Resultado esperado / actual  
+- Notas técnicas o hipótesis  
+
+### 3.3 Creación y Asignación
+- El Issue puede ser creado por el **Team Lead** o por el **Developer** que determine la necesidad de cambio.  
+- Debe vincularse explícitamente con el ticket CRM.  
+- Ningún desarrollo inicia sin una Issue asignada.
+
+### 3.4 Etiquetas (Labels)
+Usar etiquetas estandarizadas:
+| Categoría | Ejemplo | Uso |
+|------------|----------|------|
+| Tipo | `bug`, `enhancement`, `documentation` | Clasifica la naturaleza |
+| Estado | `in progress`, `needs review`, `blocked` | Indica avance |
+| Prioridad | `P1`, `P2`, `P3` | Define urgencia |
+| Validación | `needs-info`, `duplicate`, `invalid` | Revisión / QA |
+
+---
+
+## 4. Desarrollo y Vinculación
+
+- Rama obligatoria:  
+feature/CRM1023-fix-nc-parcial
+- Documentar en el Issue cualquier definición técnica tomada fuera de GitHub (correo, RocketChat, llamada).  
+- Commits deben referenciar la Issue:  
+- `Fixes #123` → cierra automáticamente  
+- `Ref #123` → mantiene abierta para QA  
+
+---
+
+## 5. Ciclo de Vida
+
+Analizar Ticket → Crear Issue → Asignar → Desarrollar → Validar → Cerrar
+
+| Estado | Descripción |
+|---------|--------------|
+| **Open** | Activa o en análisis |
+| **In Progress** | En desarrollo |
+| **Review** | En validación QA |
+| **Closed** | Resuelta y aprobada |
+| **Reopened** | Requiere ajuste adicional |
+
+---
+
+## 6. Relación Ticket ↔ Issue
+
+| Etapa | Acción | Responsable |
+|--------|---------|-------------|
+| 1 | Ticket recibido en CRM Smart Strategy Quickbase | Equipo de atención |
+| 2 | Análisis de necesidad de código | TL o Developer |
+| 3 | Creación del Issue en GitHub y vinculación al ticket | TL o Developer |
+| 4 | Asignación de responsable | TL o Developer |
+| 5 | Desarrollo y pruebas | Developer |
+| 6 | Commit con referencia al Issue | Developer |
+| 7 | QA valida cambios | QA |
+| 8 | Merge → cierre automático | GitHub |
+| 9 | Actualiza ticket con número de commit/PR | Developer |
+| 10 | Cierre final en CRM | Developer o QA |
+
+---
+
+## 7. Práctica Guiada (Demo interna)
+
+Cada integrante deberá:
+1. Crear una Issue real o simulada desde un ticket CRM.  
+2. Asignarse, etiquetar y documentar según el formato.  
+3. Simular una rama y un commit `Ref #xxx`.  
+4. Dejar comentarios sobre claridad o mejoras para la versión 1.5.
+
+---
+
+## 8. Cumplimiento
+
+El cumplimiento de este manual es **obligatorio**.  
+Issues o commits que no respeten estas políticas podrán ser **rechazados** en revisión técnica o QA.
+
+---
+
+## ANEXO A. Política de Respaldo de Issues y Metadatos
+
+### A.1 Motivo
+GitHub no garantiza cobertura total de todos los metadatos de un repositorio (issues, comentarios, discusiones, LFS, etc.).  
+Fuentes oficiales:  
+- [GitHub Docs – Backing up a repository](https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository)  
+- [Rewind: Three Ways to Backup Your GitHub Issues](https://rewind.com/blog/three-ways-to-backup-your-github-issues/)  
+- [GitProtect.io – GitHub Backup Best Practices](https://gitprotect.io/blog/github-backup-best-practices/)
+
+### A.2 Política
+- **Frecuencia:** Trimestral (enero, abril, julio, octubre).  
+- **Responsable:** Team Lead o developer designado.  
+- **Método:** Manual o automatizado (n8n, PowerShell, API).  
+  Una vez implementada la automatización, deberá documentarse y anexarse formalmente.  
+- **Contenido mínimo:** Issues, comentarios, PRs, labels, milestones y configuraciones clave.  
+- **Retención:** 12 meses mínimo en repositorio seguro definido por Smart Strategy.
+
+> *Esta política complementa el manejo de Issues; su objetivo es preservar la trazabilidad histórica sin generar carga administrativa excesiva.*
+
+---
+
+## 9. Referencias
+
+- [GitHub Docs: About Issues](https://docs.github.com/articles/about-issues)  
+- [GitHub Docs: Backing up a repository](https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository)  
+- [Rewind Blog: Best Practices for GitHub Issues](https://rewind.com/blog/best-practices-for-using-github-issues/)  
+- [GitProtect.io: Backup Best Practices](https://gitprotect.io/blog/github-backup-best-practices/)  
+- [YouTube: Issues Workflow en GitHub](https://www.youtube.com/watch?v=cIhNWpU5ZJg)
+
+---
