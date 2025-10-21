@@ -1,0 +1,35 @@
+name: Nueva Issue de desarrollo
+description: Usa esta plantilla para registrar un Issue relacionado a un ticket del CRM Smart Strategy Quickbase
+title: "[CRM#xxxx] Breve descripción del caso"
+labels: ["needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🧭 Política interna de Issues Smart Strategy
+        Antes de continuar, asegúrate de cumplir con las reglas del [Manual de Buenas Prácticas de Issues](../docs/ISSUE_POLICY.md).
+
+        **Resumen rápido:**
+        - Toda Issue debe vincularse a un ticket del CRM Smart Strategy Quickbase.  
+        - El título debe seguir el formato `[CRM#XXXX] descripción`.  
+        - Se debe asignar responsable y etiquetas correspondientes.  
+        - Los commits deben incluir `Fixes #<número>` o `Ref #<número>`.
+
+  - type: input
+    id: ticket
+    attributes:
+      label: Ticket CRM relacionado
+      description: Indica el número o enlace del ticket en CRM Smart Strategy Quickbase
+      placeholder: "CRM#1234"
+    validations:
+      required: true
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción del caso
+      description: Describe claramente el problema o mejora detectada
+      placeholder: |
+        Describe aquí el contexto, pasos para reproducir, resultado actual y esperado.
+    validations:
+      required: true
